@@ -1,0 +1,83 @@
+#!/usr/bin/env bash
+
+set -e
+
+# This script installs brew and many other utils using it
+#
+# Some parts are taken from:
+# - https://github.com/holman/dotfiles
+# - https://github.com/qchenevier/macbook_setup
+#
+
+
+# Install command-line tools using Homebrew.
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+# Ask for the administrator password upfront.
+sudo -v
+
+# Keep-alive: update existing `sudo` time stamp until the script has finished.
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+# Check for Homebrew,
+# Install if we don't have it
+if test ! $(which brew); then
+  echo "Installing homebrew..."
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+# Make sure we’re using the latest Homebrew.
+brew update
+
+# Upgrade any already-installed formulae.
+brew upgrade
+brew cask upgrade
+
+brew tap homebrew/cask homebrew/cask-fonts homebrew/cask-versions
+
+# Install more recent versions of some OS X tools.
+brew install vim
+brew install homebrew/dupes/grep
+brew install homebrew/dupes/openssh
+brew install homebrew/dupes/screen
+
+# Install `wget` with IRI support.
+brew install wget
+
+# mmm
+brew install hub git exa bat z
+
+# Fonts
+brew cask install font-hack-nerd-font font-iosevka font-iosevka-nerd-font-mono
+
+# zsh
+if test ! $(which zsh); then
+  brew install git zsh zsh-syntax-highlighting zsh-autosuggestions
+  sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+  cp ./.zshrc $HOME/.zshrc
+  # We installed the new shell, now we have to activate it
+  echo "Adding the newly installed shell to the list of allowed shells"
+  # Prompts for password
+  bash -c 'echo /usr/local/bin/zsh >> /etc/shells'
+  # Change to the new shell, prompts for password
+  chsh -s /usr/local/bin/zsh
+fi
+
+# fuzzy search in terminal
+brew install fzf
+if test ! $(which fzf); then
+  $(brew --prefix)/opt/fzf/install
+fi
+
+# Install developer friendly quick look plugins; see https://github.com/sindresorhus/quick-look-plugins
+brew cask install --appdir="/Applications" qlcolorcode qlstephen qlmarkdown quicklook-json
+
+brew cask install iterm2
+brew install node
+brew cask install anaconda
+
+brew cask install --appdir="/Applications" gimp
+brew cask install --appdir="/Applications" xquartz inkscape
+
+brew cask install atom-beta visual-studio-code-insiders
