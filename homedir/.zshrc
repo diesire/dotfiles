@@ -191,9 +191,7 @@ export HOMEBREW_NO_ANALYTICS=1  # disables statistics that brew collects
 
 # Pagers:
 export LESS="-R"  # argument to allow less to show colors
-export PAGER='bat'
-export BAT_PAGER="less -RF"
-export MANPAGER='less -RF'
+export PAGER="most"
 
 # === Histories ===
 
