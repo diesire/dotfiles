@@ -9,7 +9,6 @@ set -e
 # - https://github.com/qchenevier/macbook_setup
 #
 
-
 # Install command-line tools using Homebrew.
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
@@ -69,11 +68,16 @@ fi
 # Install developer friendly quick look plugins; see https://github.com/sindresorhus/quick-look-plugins
 brew cask install --appdir="/Applications" qlcolorcode qlstephen qlmarkdown quicklook-json
 
-brew cask install iterm2
+# Dev tools
 brew install node
 brew cask install anaconda
 
+# Terminal
+brew cask install iterm2
+
+# Editors
+brew cask install atom-beta visual-studio-code-insiders
+
+# Applications
 brew cask install --appdir="/Applications" gimp
 brew cask install --appdir="/Applications" xquartz inkscape
-
-brew cask install atom-beta visual-studio-code-insiders
