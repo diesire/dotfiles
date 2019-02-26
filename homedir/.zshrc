@@ -166,15 +166,13 @@ alias reload="exec $SHELL -l"
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 
-###########################
-# FUZZY COMPLETION
-###########################
+# === Fuzzy completion ===
+#
 # use with ctrl-r & ctrl-t
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-###########################
-# ANACONDA
-###########################
+# === Anaconda ===
+#
 # set anaconda path
 . /usr/local/anaconda3/etc/profile.d/conda.sh
 
@@ -194,14 +192,13 @@ export LESS="-R"  # argument to allow less to show colors
 export PAGER="most"
 
 # === Histories ===
-
+#
 # Enable persistent REPL history for `node`.
 export NODE_REPL_HISTORY="$HOME/.node_history"
 # Use sloppy mode by default, matching web browsers.
 export NODE_REPL_MODE='sloppy'
 
 # === Autocomplete ===
-#
 source <(npm completion)  # adds normal autocomplete to `npm` commands
 
 # === z ===
@@ -214,4 +211,5 @@ source "/usr/local/etc/profile.d/z.sh"
 
 
 # Private/Proprietary shell aliases (not to be checked into the public repo) :)
+# todo: Add if clause
 #source ~/Dropbox/Private/Boxes/osx/.shellaliases
