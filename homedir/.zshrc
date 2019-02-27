@@ -148,6 +148,11 @@ POWERLEVEL9K_TIME_FOREGROUND="cyan"
 POWERLEVEL9K_TIME_FORMAT="%D{%H:%M:%S}"
 POWERLEVEL9K_TIME_ICON=''
 
+##-----Color Set
+#for code ({000..255}) print -P -- "$code: %F{$code}This is how your text would look like%f"
+#getColorCode background
+#getColorCode foreground
+
 
 source $ZSH/oh-my-zsh.sh
 
