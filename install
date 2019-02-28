@@ -41,9 +41,9 @@ brew install vim grep openssh screen git wget
 brew install hub exa z most
 
 # Fonts
-brew cask install font-hack-nerd-font font-meslo-nerd-font-mono font-meslo-nerd-font
-brew cask install font-iosevka font-iosevka-nerd-font-mono font-iosevka-nerd-font
-brew cask install font-menlo-for-powerline font-meslo-for-powerline
+brew cask install font-hack-nerd-font
+brew cask install font-iosevka font-iosevka-nerd-font
+brew cask install font-ubuntu font-ubuntumono-nerd-font
 
 # zsh
 if test ! $(which zsh); then
