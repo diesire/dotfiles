@@ -81,3 +81,4 @@ brew cask install atom-beta visual-studio-code-insiders
 # Applications
 brew cask install --appdir="/Applications" gimp
 brew cask install --appdir="/Applications" xquartz inkscape
+brew cask install --appdir="/Applications" caffeine
