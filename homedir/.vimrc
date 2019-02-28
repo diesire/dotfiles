@@ -22,19 +22,19 @@ let mapleader=","
 set binary
 set noeol
 " Centralize backups, swapfiles and undo history
-set backupdir=~/.vim/backups
-set directory=~/.vim/swaps
-if exists("&undodir")
-    set undodir=~/.vim/undo
-endif
+"set backupdir=~/.vim/backups
+"set directory=~/.vim/swaps
+"if exists("&undodir")
+"    set undodir=~/.vim/undo
+"endif
 " Don’t create backups when editing files in certain directories
 set backupskip=/tmp/*,/private/tmp/*
 " Respect modeline in files
 set modeline
 set modelines=4
 " Enable per-directory .vimrc files and disable unsafe commands in them
-set exrc
-set secure
+"set exrc
+"set secure
 " Enable line numbers
 set number
 " Enable syntax highlighting
@@ -44,7 +44,7 @@ set cursorline
 " Make tabs as wide as two spaces
 set tabstop=2
 " Show “invisible” characters
-set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
+" set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
 set list
 " Highlight searches
 set hlsearch
@@ -61,7 +61,7 @@ set noerrorbells
 " Don’t reset cursor to start of line when moving around.
 set nostartofline
 " Show the cursor position
-set ruler
+" set ruler
 " Don’t show the intro message when starting Vim
 set shortmess=atI
 " Show the current mode
