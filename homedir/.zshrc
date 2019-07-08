@@ -3,7 +3,9 @@
 export PATH=/usr/local/anaconda3/bin:"$PATH"
 
 # ohmyzsh
-test -e ~/.ohmyzshconfig && source ~/.ohmyzshconfig
+# temporally disabled dues to https://github.com/robbyrussell/oh-my-zsh/issues/7972
+# test -e ~/.ohmyzshconfig && source ~/.ohmyzshconfig
+
 
 ###########################
 # ALIASES
