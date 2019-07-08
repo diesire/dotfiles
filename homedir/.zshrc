@@ -4,7 +4,7 @@ export PATH=/usr/local/anaconda3/bin:"$PATH"
 
 # ohmyzsh
 # temporally disabled dues to https://github.com/robbyrussell/oh-my-zsh/issues/7972
-# test -e ~/.ohmyzshconfig && source ~/.ohmyzshconfig
+test -e ~/.ohmyzshconfig && source ~/.ohmyzshconfig
 
 
 ###########################
@@ -79,7 +79,7 @@ export NODE_REPL_HISTORY="$HOME/.node_history"
 export NODE_REPL_MODE='sloppy'
 
 # === Autocomplete ===
-source <(npm completion)  # adds normal autocomplete to `npm` commands
+# source <(npm completion)  # adds normal autocomplete to `npm` commands
 
 # === z ===
 # https://github.com/rupa/z
