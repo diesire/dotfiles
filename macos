@@ -131,6 +131,16 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 # Diable automatic period substitution:
 defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 
+
+# Set default editor for all text files and shell scripts
+# https://apple.stackexchange.com/questions/123833/replace-text-edit-as-the-default-text-editor
+# ------------------------------------------------------------------------------
+# /usr/libexec/PlistBuddy -c 'Print CFBundleIdentifier' /Applications/Atom\ Nightly.app/Contents/Info.plist
+# brew install duti
+# duti -s com.github.atom public.plain-text all
+# duti -s com.github.atom public.unix-executable all
+echo 'You can also set the default text editor, see the script for more details'
+
 # Restarting apps:
 echo 'Restarting apps...'
 killall Finder
