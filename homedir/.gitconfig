@@ -55,3 +55,11 @@
 # Local/private config goes in the include
 [include]
         path = ~/.gitconfig.local
+[user]
+	name = Pablo Escalada
+	email = diesire@gmail.com
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
