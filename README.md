@@ -2,7 +2,7 @@
 
 Personal dotfiles
 
-# Quick start
+## Quick start
 
 > Prerequisite:
 > - Mount your Dropbox/Google Drive files into your filesystem
