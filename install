@@ -30,7 +30,7 @@ brew update
 
 # Upgrade any already-installed formulae.
 brew upgrade
-brew cask upgrade
+brew upgrade --cask
 
 brew tap homebrew/cask homebrew/cask-fonts homebrew/cask-versions
 
@@ -41,9 +41,9 @@ brew install vim grep openssh screen git wget
 brew install hub exa z most
 
 # Fonts
-brew cask install font-hack-nerd-font
-brew cask install font-iosevka font-iosevka-nerd-font
-brew cask install font-ubuntu font-ubuntumono-nerd-font
+brew install --cask font-hack-nerd-font
+brew install --cask font-iosevka font-iosevka-nerd-font
+brew install --cask font-ubuntu font-ubuntumono-nerd-font
 
 # zsh
 if test ! $(which zsh); then
@@ -66,19 +66,24 @@ if test ! $(which fzf); then
 fi
 
 # Install developer friendly quick look plugins; see https://github.com/sindresorhus/quick-look-plugins
-brew cask install --appdir="/Applications" qlcolorcode qlstephen qlmarkdown quicklook-json
+# To get plugins working in Catalina, you will need to remove the quarantine attribute.
+# Run this to see the attributes:
+# xattr -r ~/Library/QuickLook
+# And run this to remove the attributes:
+# xattr -d -r com.apple.quarantine ~/Library/QuickLook
+brew install --cask --appdir="/Applications" qlcolorcode qlstephen qlmarkdown quicklook-json
 
 # Dev tools
 brew install node
-brew cask install anaconda
+brew install --cask anaconda
 
 # Terminal
-brew cask install iterm2
+brew install --cask iterm2
 
 # Editors
-brew cask install atom-beta visual-studio-code-insiders
+brew install --cask visual-studio-code-insiders
 
 # Applications
-brew cask install --appdir="/Applications" gimp
-brew cask install --appdir="/Applications" xquartz inkscape
-brew cask install --appdir="/Applications" caffeine
+# brew install --cask --appdir="/Applications" gimp
+# brew install --cask --appdir="/Applications" xquartz inkscape
+brew install --cask --appdir="/Applications" caffeine
