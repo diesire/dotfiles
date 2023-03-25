@@ -22,7 +22,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Install if we don't have it
 if test ! $(which brew); then
   echo "Installing homebrew..."
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
 # Make sure we’re using the latest Homebrew.
@@ -32,7 +32,9 @@ brew update
 brew upgrade
 brew upgrade --cask
 
-brew tap homebrew/cask homebrew/cask-fonts homebrew/cask-versions
+brew tap homebrew/cask
+brew tap homebrew/cask-fonts
+brew tap homebrew/cask-versions
 
 # Install more recent versions of some OS X tools.
 brew install vim grep openssh screen git wget
@@ -43,12 +45,12 @@ brew install hub exa z most
 # Fonts
 brew install --cask font-hack-nerd-font
 brew install --cask font-iosevka font-iosevka-nerd-font
-brew install --cask font-ubuntu font-ubuntumono-nerd-font
+brew install --cask font-ubuntu font-ubuntu-mono-nerd-font
 
 # zsh
 if test ! $(which zsh); then
   brew install git zsh zsh-syntax-highlighting zsh-autosuggestions
-  sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
   cp ./.zshrc $HOME/.zshrc
   # We installed the new shell, now we have to activate it
@@ -56,7 +58,7 @@ if test ! $(which zsh); then
   # Prompts for password
   bash -c 'echo /usr/local/bin/zsh >> /etc/shells'
   # Change to the new shell, prompts for password
-  chsh -s /usr/local/bin/zsh
+  chsh -s $(which zsh)
 fi
 
 # fuzzy search in terminal
@@ -87,3 +89,4 @@ brew install --cask visual-studio-code-insiders
 # brew install --cask --appdir="/Applications" gimp
 # brew install --cask --appdir="/Applications" xquartz inkscape
 brew install --cask --appdir="/Applications" caffeine
+
