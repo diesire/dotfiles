@@ -84,7 +84,7 @@ export NODE_REPL_MODE='sloppy'
 # === z ===
 # https://github.com/rupa/z
 
-source "/usr/local/etc/profile.d/z.sh"
+source "${HOMEBREW_PREFIX}/etc/profile.d/z.sh"
 
 
 

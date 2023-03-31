@@ -15,3 +15,7 @@ Personal dotfiles
 4. `./install` to install additional sofware using brew
 
 
+## Known bugs
+In new macs with arm64 architecture brew is not yet fully supported and we can face a few error here and there
+- Brew uses new /opt/homebrew/ instead of old /usr/local/ to install a few things, so some shell scripts and links could be broken
+- zsh problem: compinit:503: no such file or directory: /usr/local/share/zsh/site-functions/_brew https://stackoverflow.com/a/67808050
