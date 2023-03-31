@@ -62,8 +62,8 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-# plugins=(compleat docker gitfas npm osx gitflow) # temporally disable npm plugin 
-plugins=(compleat docker gitfast osx gitflow)
+# plugins=(compleat docker gitfas npm osx gitflow) # temporally disable npm plugin
+plugins=(compleat docker docker-compose gitfast git-flow)
 
 ###########################
 # ZSH POWERLEVEL9K THEME CONFIG
