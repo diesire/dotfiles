@@ -77,7 +77,7 @@ brew install --cask --appdir="/Applications" qlcolorcode qlstephen qlmarkdown qu
 
 # Dev tools
 brew install node
-brew install --cask anaconda
+# brew install --cask anaconda
 
 # Terminal
 brew install --cask iterm2

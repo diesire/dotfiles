@@ -1,7 +1,3 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=/usr/local/anaconda3/bin:"$PATH"
-export PATH=/usr/local/anaconda3/bin:"$PATH"
-
 # ohmyzsh
 # temporally disabled dues to https://github.com/robbyrussell/oh-my-zsh/issues/7972
 test -e ~/.ohmyzshconfig && source ~/.ohmyzshconfig
@@ -51,10 +47,6 @@ source ~/.alias
 # use with ctrl-r & ctrl-t
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# === Anaconda ===
-#
-# set anaconda path
-. /usr/local/anaconda3/etc/profile.d/conda.sh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
@@ -93,3 +85,10 @@ source "${HOMEBREW_PREFIX}/etc/profile.d/z.sh"
 # Private/Proprietary shell aliases (not to be checked into the public repo) :)
 # todo: Add if clause
 #source ~/Dropbox/Private/Boxes/osx/.shellaliases
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/pabloescaladagomez/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+# Created by `pipx` on 2024-01-26 11:57:05
+export PATH="$PATH:/Users/pabloescaladagomez/.local/bin"
