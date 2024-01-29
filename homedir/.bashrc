@@ -5,3 +5,6 @@
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/Users/pabloescaladagomez/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+
+export PATH="/opt/homebrew/opt/python@3.11/libexec/bin:$PATH"

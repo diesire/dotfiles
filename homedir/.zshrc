@@ -92,3 +92,5 @@ export PATH="/Users/pabloescaladagomez/.rd/bin:$PATH"
 
 # Created by `pipx` on 2024-01-26 11:57:05
 export PATH="$PATH:/Users/pabloescaladagomez/.local/bin"
+
+export PATH="/opt/homebrew/opt/python@3.11/libexec/bin:$PATH"
